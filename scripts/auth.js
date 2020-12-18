@@ -20,10 +20,10 @@ const createForm = document.querySelector('#create-form');
 createForm.addEventListener('submit', (e) => {
   e.preventDefault();
   var user = firebase.auth().currentUser;
-  db.collection('guides').user.set({
-     title: createForm.title.value,
-    content: createForm.content.value
-    }).then(() => {
+  db.collection('guides').add({
+    user.title: createForm.title.value,
+    user.content: createForm.content.value
+  }).then(() => {
     // close the create modal & reset form
     const modal = document.querySelector('#modal-create');
     M.Modal.getInstance(modal).close();

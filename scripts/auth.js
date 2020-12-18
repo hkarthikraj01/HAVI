@@ -19,7 +19,8 @@ auth.onAuthStateChanged(user => {
 const createForm = document.querySelector('#create-form');
 createForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  db.collection('guides').add(user.uid).set({
+  var user = firebase.auth().currentUser;
+  db.collection('guides').doc(user).add({
      title: createForm.title.value,
     content: createForm.content.value
     }).then(() => {

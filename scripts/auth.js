@@ -19,7 +19,7 @@ auth.onAuthStateChanged(user => {
 const createForm = document.querySelector('#create-form');
 createForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  db.collection('guides').doc(user.uid).set({
+  db.collection('guides').add(user.uid).set({
      title: createForm.title.value,
     content: createForm.content.value
     }).then(() => {

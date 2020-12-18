@@ -12,10 +12,10 @@ const setupUI = (user) => {
     db.collection('users').doc(user.uid).get().then(doc => {
       const html = `
         <!--div>Logged in as ${user.email}</div-->
-        <div>${doc.data().name}</div>
-        <div>${doc.data().email}</div>
-        <div>${doc.data().phone}</div>
-        <div>${doc.data().date}</div>
+        <div>NAME  : ${doc.data().name}</div>
+        <div>EMAIL : ${doc.data().email}</div>
+        <div>Ph.No : ${doc.data().phone}</div>
+        <div>DOB   : ${doc.data().date}</div>
       `;
       accountDetails.innerHTML = html;
       const s = `

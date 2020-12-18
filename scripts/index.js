@@ -15,6 +15,7 @@ const setupUI = (user) => {
         <div>${doc.data().name}</div>
         <div>${doc.data().email}</div>
         <div>${doc.data().phone}</div>
+        <div>${doc.data().date}</div>
       `;
       accountDetails.innerHTML = html;
       const s = `

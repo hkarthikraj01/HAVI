@@ -154,6 +154,7 @@ signupForm.addEventListener('submit', (e) => {
         name: signupForm['full_name'].value,
         email: signupForm['your_email'].value,
         phone: signupForm['phone'].value,
+        date: signupForm['date'].value,
     });
   }).then(() => {
    

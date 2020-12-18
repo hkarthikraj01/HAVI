@@ -20,7 +20,7 @@ const createForm = document.querySelector('#create-form');
 createForm.addEventListener('submit', (e) => {
   e.preventDefault();
   var user = firebase.auth().currentUser;
-  db.collection('guides').doc(user).add({
+  db.collection('guides').user.add({
      title: createForm.title.value,
     content: createForm.content.value
     }).then(() => {

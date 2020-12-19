@@ -13,41 +13,35 @@
   firebase.initializeApp(firebaseConfig);
   //firebase.analytics();
  // firebase.analytics();
-  
+
   // Reference messages collection
- var messagesRef = firebase.database().ref('quote');
+  var messagesRef = firebase.database().ref('quote');
   
   // Listen for form submit
-  document.getElementById('signup-form').addEventListener('submit', submitForm);
+  document.getElementById('contactForm').addEventListener('submit', submitForm);
   
   // Submit form
   function submitForm(e){
     e.preventDefault();
-  
-    // Get values
     var full_name = getInputVal('full_name');
     var phone = getInputVal('phone');
     var your_email = getInputVal('your_email');
     var date = getInputVal('date');
-  
+    
   
     // Save message
     saveMessage(full_name, phone, your_email,  date);
   
     // Show alert
     document.querySelector('.alert').style.display = 'block';
-    
-    
   
     // Hide alert after 3 seconds
     setTimeout(function(){
-     document.querySelector('.alert').style.display = 'none';
-    },2000);
-    
-    //window.open('bookingSuccess.html', '_blank');
+      document.querySelector('.alert').style.display = 'none';
+    },3000);
   
     // Clear form
-   // document.getElementById('bookingForm').reset();
+    document.getElementById('signup-form').reset();
   }
   
   // Function to get get form values
@@ -63,6 +57,5 @@
       phone:phone,
       your_email:your_email,
       date:date
-
     });
   }

@@ -1,19 +1,3 @@
-// listen for auth status changes
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyC-pKtCM2VQKsxnO0zCU0m7OdNj7W0Zr7c",
-    authDomain: "authfirebase-2533f.firebaseapp.com",
-    databaseURL: "https://authfirebase-2533f.firebaseio.com",
-    projectId: "authfirebase-2533f"
-    };
-    firebase.initializeApp(config);
-    
-    // make auth and firestore references
-    const auth = firebase.auth();
-    const db = firebase.firestore();
-
-    // update firestore settings
-    db.settings({ timestampsInSnapshots: true });
 auth.onAuthStateChanged(user => {
   if (user) {
     db.collection('guides').onSnapshot(snapshot => {

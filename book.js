@@ -15,7 +15,7 @@
  // firebase.analytics();
   
   // Reference messages collection
-  var messagesRef = firebase.database().ref('book');
+ var messagesRef = firebase.database().ref('quote');
   
   // Listen for form submit
   document.getElementById('signup-form').addEventListener('submit', submitForm);

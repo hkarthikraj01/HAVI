@@ -18,7 +18,7 @@
   var messagesRef = firebase.database().ref('quote');
   
   // Listen for form submit
-  document.getElementById('contactForm').addEventListener('submit', submitForm);
+  document.getElementById('signup-form').addEventListener('submit', submitForm);
   
   // Submit form
   function submitForm(e){

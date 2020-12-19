@@ -15,9 +15,9 @@ function renderuser(doc){
      date.textContent = doc.data().date;
     
 
-    li.appendChild(name);
-    li.appendChild(email);
-     li.appendChild(phone);
+    li.appendChild("name"name);
+    li.appendChild("email"email);
+     li.appendChild("phone"phone);
     li.appendChild(date);
 
     userList.appendChild(li);

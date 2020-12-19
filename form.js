@@ -48,6 +48,38 @@ function codeverify() {
     });
 }
 //const auth = firebase.auth();
+var messagesRef = firebase.database().ref('quote');
+  
+  // Listen for form submit
+  document.getElementById('signup-form').addEventListener('submit', submitForm);
+  
+  // Submit form
+  function submitForm(e){
+    e.preventDefault();
+    var full_name = getInputVal('full_name');
+    var phone = getInputVal('phone');
+    var your_email = getInputVal('your_email');
+    var date = getInputVal('date');
+    
+  
+    // Save message
+    saveMessage(full_name, phone, your_email,  date);
+  
+    // Show alert
+  }
+  
+  // Function to get get form values
+  
+  // Save message to firebase
+  function saveMessage(full_name, phone, your_email,  date){
+    var newMessageRef = messagesRef.push();
+    newMessageRef.set({
+      full_name: full_name,
+      phone:phone,
+      your_email:your_email,
+      date:date
+    });
+  }
 
 //auth.languageCode = 'DE_de';
 const resetPassword = document.querySelector('#resetPassword');

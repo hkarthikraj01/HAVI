@@ -9,15 +9,15 @@ function renderuser(doc){
     let date = document.createElement('span');
 
     li.setAttribute('data-id', doc.id);
-    name.textContent = doc.data().name;
-    email.textContent = doc.data().email;
-     phone.textContent = doc.data().phone;
-     date.textContent = doc.data().date;
+    name.textContent = "name :"+doc.data().name;
+    email.textContent = "email :"+doc.data().email;
+     phone.textContent = "phone :"+doc.data().phone;
+     date.textContent = "date :"+doc.data().date;
     
 
-    li.appendChild("name"name);
-    li.appendChild("email"email);
-     li.appendChild("phone"phone);
+    li.appendChild(name);
+    li.appendChild(email);
+     li.appendChild(phone);
     li.appendChild(date);
 
     userList.appendChild(li);

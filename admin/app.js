@@ -1,7 +1,7 @@
-const cafeList = document.querySelector('#cafe-list');
+const userList = document.querySelector('#user-list');
 
 // create element & render cafe
-function renderCafe(doc){
+function renderuser(doc){
     let li = document.createElement('li');
     let name = document.createElement('span');
     let email = document.createElement('span');
@@ -20,12 +20,12 @@ function renderCafe(doc){
      li.appendChild(phone);
     li.appendChild(date);
 
-    cafeList.appendChild(li);
+    userList.appendChild(li);
 }
 
 // getting data
 db.collection('users').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
-        renderCafe(doc);
+        renderuser(doc);
     });
 });

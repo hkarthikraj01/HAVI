@@ -15,7 +15,7 @@
  // firebase.analytics();
 
   // Reference messages collection
-  var messagesRef = firebase.database().ref('quote');
+  var messagesRef = firebase.database().ref();
   
   // Listen for form submit
   document.getElementById('contactForm').addEventListener('submit', submitForm);
